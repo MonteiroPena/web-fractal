@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+}
+
+.content {
+  flex-grow: 1;
+  height: 100vh;
+  overflow: auto;
+}
+
+.container {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-top: 80px;
+  width: 70%;
+}
+
+.paper {
+  padding: 2px;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  align-items: center;
+  background: url('../../assets/home-background.jpg');
+}
+
+.appBarSpacer {
+  padding-right: 24;
+}
+
+.fixedHeight {
+  height: 240;
+}
+
+.MuiContainer-root {
+  width: 70% !important;
+}
+.p-home {
+  color: white !important;
+  font-size: 30px;
+}

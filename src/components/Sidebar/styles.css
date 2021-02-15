@@ -1,0 +1,24 @@
+.paper {
+  padding: 2px;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+}
+
+.drawerPaper {
+  position: relative;
+  white-space: nowrap;
+  width: 240px;
+}
+
+.MuiDrawer-paper {
+  width: 15% !important;
+}
+
+img {
+  width: 160px;
+}
+a {
+  text-decoration: none;
+  color: #343536;
+}
