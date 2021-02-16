@@ -21,7 +21,7 @@ import './styles.css';
 function Sidebar() {
   return (
     <>
-      <Drawer variant='permanent' classes='drawerPaper'>
+      <Drawer variant='permanent' className='drawerPaper'>
         <div className='toolbarIcon'>
           <Link to='/'>
             <IconButton>

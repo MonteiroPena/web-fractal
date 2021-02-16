@@ -22,6 +22,7 @@
   flex-direction: column;
   align-items: center;
   background: white;
+  margin-bottom: 10px;
 }
 
 .appBarSpacer {
@@ -33,9 +34,17 @@
 }
 
 .MuiContainer-root {
-  width: 70% !important;
+  width: 90% !important;
 }
 p {
   color: black !important;
   font-size: 30px;
+}
+p i{
+  font-size: 15px;
+}
+
+#mapId {
+  height: 400px;
+  width: 100%;
 }
