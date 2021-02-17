@@ -6,7 +6,7 @@ import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
 import Footer from '../../components/Footer';
 
-import Bac from '../../assets/Siga.svg';
+import siga from '../../assets/Siga.svg';
 
 import './styles.css';
 
@@ -22,7 +22,7 @@ function Home() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper className='paper'>
-                <img src={Bac} alt='Bac' />
+                <img src={siga} alt='siga' />
                 <p className='p-home'>
                   Todas informações de recursos hídricos integradas
                 </p>
