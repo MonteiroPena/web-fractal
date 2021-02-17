@@ -22,16 +22,11 @@ function PolylineComponent() {
   const limeOptions = { color: 'lime' };
   return (
     <>
-      {linhas.map((linha, index) => {
-        const polyline = [[linha.lat, linha.lng]];
-        return (
-          <Polyline
-            key={index}
-            pathOptions={limeOptions}
-            positions={polyline}
-          />
-        );
-      })}
+      <Polyline
+        key='linhasId'
+        pathOptions={limeOptions}
+        positions={[linhas]}
+      />
     </>
   );
 }

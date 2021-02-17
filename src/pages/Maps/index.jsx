@@ -39,36 +39,37 @@ function Maps() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               {/* mapas */}
-              {pontos.map((ponto) => {
-                const positions = [ponto.lat_stt, ponto.lng_stt];
 
-                return (
-                  <Paper className='paper-maps' key={ponto.id_stt}>
-                    <MapContainer
-                      id='mapId'
-                      center={positions}
-                      zoom={12}
-                      scrollWheelZoom={false}
-                    >
-                      <TileLayer
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                      />
-                      <Marker position={positions}>
+              <Paper className='paper-maps' /*  key={ponto.id_stt} */>
+                <MapContainer
+                  id='mapId'
+                  center={[-27.71025194547426, -48.85784262790395]}
+                  zoom={11}
+                  scrollWheelZoom={false}
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                  />
+                  {pontos.map((ponto, index) => {
+                    const positions = [ponto.lat_stt, ponto.lng_stt];
+
+                    return (
+                      <Marker position={positions} key={index + 'marker'}>
                         <Popup>{ponto.nome_stt}</Popup>
                       </Marker>
+                    );
+                  })}
+                  {/* poligono */}
+                  <PolygonComponent />
 
-                      {/* poligono */}
-                      <PolygonComponent />
-                      {/* Linhas */}
-                      <PolylineComponent />
-                    </MapContainer>
-                    <p>
-                      {ponto.nome_stt} - Responsavel: {ponto.responsavel_stt}
-                    </p>
-                  </Paper>
-                );
-              })}
+                  {/* Linhas */}
+                  <PolylineComponent />
+                </MapContainer>
+                {/* <p>
+                  {ponto.nome_stt} - Responsavel: {ponto.responsavel_stt}
+                </p> */}
+              </Paper>
             </Grid>
           </Grid>
           <Box pt={4}>

@@ -23,16 +23,11 @@ function PolygonComponent() {
 
   return (
     <>
-      {poligono.map((polig, index) => {
-        const polygon = [[polig.lat, polig.lng]];
-        return (
-          <Polygon
-            key={index}
-            pathOptions={purpleOptions}
-            positions={polygon}
-          />
-        );
-      })}
+      <Polygon
+        key='meuPoligono'
+        pathOptions={purpleOptions}
+        positions={poligono}
+      />
     </>
   );
 }
