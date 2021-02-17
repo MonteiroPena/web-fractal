@@ -12,10 +12,13 @@
   padding-top: 4px;
   padding-bottom: 4px;
   margin-top: 80px;
-  width: 70%;
+  width: 80%;
 }
 
 .paper-graphics {
+  width: 900px;
+  height: 500px;
+  justify-content: center;
   padding: 2px;
   display: flex;
   overflow: auto;
@@ -33,12 +36,5 @@
 }
 
 .MuiContainer-root {
-  width: 70% !important;
+  width: 80% !important;
 }
-p {
-  color: black !important;
-  font-size: 30px;
-}
-/* .highcharts-container {
-  width: 400px !important;
-} */

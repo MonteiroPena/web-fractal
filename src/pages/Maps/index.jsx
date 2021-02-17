@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import { Box, Container, CssBaseline, Grid, Paper } from '@material-ui/core';
 
 import Header from '../../components/Header';
@@ -9,25 +9,11 @@ import Footer from '../../components/Footer';
 
 import PolylineComponent from './components/PolylineComponent';
 import PolygonComponent from './components/PolygonComponent';
-
-import api from '../../services/api';
+import MarkerComponent from './components/MarkerComponent';
 
 import './styles.css';
 
-const headers = {
-  'Content-Type': 'application/json',
-};
 function Maps() {
-  const [pontos, setPontos] = useState([]);
-
-  useEffect(() => {
-    api
-      .get('/recrutamentos/frontend/pontos.json', { headers: headers })
-      .then((response) => {
-        setPontos(response.data);
-      });
-  }, []);
-
   return (
     <div className='root'>
       <CssBaseline />
@@ -38,37 +24,26 @@ function Maps() {
         <Container maxWidth='lg' className='container'>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              {/* mapas */}
+              {/* mapa */}
 
-              <Paper className='paper-maps' /*  key={ponto.id_stt} */>
+              <Paper className='paper-maps'>
                 <MapContainer
                   id='mapId'
-                  center={[-27.71025194547426, -48.85784262790395]}
-                  zoom={11}
+                  center={[-27.426846004859655, -48.6880356647392]}
+                  zoom={9}
                   scrollWheelZoom={false}
                 >
                   <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                   />
-                  {pontos.map((ponto, index) => {
-                    const positions = [ponto.lat_stt, ponto.lng_stt];
-
-                    return (
-                      <Marker position={positions} key={index + 'marker'}>
-                        <Popup>{ponto.nome_stt}</Popup>
-                      </Marker>
-                    );
-                  })}
+                  {/* Maker */}
+                  <MarkerComponent />
                   {/* poligono */}
                   <PolygonComponent />
-
                   {/* Linhas */}
                   <PolylineComponent />
                 </MapContainer>
-                {/* <p>
-                  {ponto.nome_stt} - Responsavel: {ponto.responsavel_stt}
-                </p> */}
               </Paper>
             </Grid>
           </Grid>
