@@ -24,7 +24,7 @@ function PolygonComponent() {
   return (
     <>
       <Polygon
-        key='meuPoligono'
+        key='poligonoId'
         pathOptions={purpleOptions}
         positions={poligono}
       />
